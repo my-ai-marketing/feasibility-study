@@ -214,6 +214,93 @@ main section#executive.hero>.hero-stats{
   }
 }
 
+/* Centre the complete executive hero on every screen size. */
+main section#executive.hero{
+  text-align:center!important;
+}
+
+main section#executive.hero>.hero-grid{
+  grid-template-columns:minmax(0,1fr)!important;
+  justify-items:center!important;
+  align-items:start!important;
+  gap:24px!important;
+}
+
+main section#executive.hero>.hero-grid>div:first-child{
+  width:min(100%,1100px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center!important;
+}
+
+main section#executive.hero .eyebrow{
+  justify-content:center!important;
+  width:100%;
+}
+
+main section#executive.hero .display{
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+main section#executive.hero .lede{
+  margin-left:auto!important;
+  margin-right:auto!important;
+  text-align:center!important;
+}
+
+main section#executive.hero .decision-lockup{
+  margin-left:auto!important;
+  margin-right:auto!important;
+  text-align:center!important;
+}
+
+main section#executive.hero .chips{
+  justify-content:center!important;
+}
+
+main section#executive.hero .hero-meta{
+  align-self:center!important;
+  width:min(100%,760px)!important;
+  max-width:760px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  text-align:center!important;
+}
+
+main section#executive.hero .hero-meta div{
+  justify-content:center!important;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+main section#executive.hero .hero-meta strong{
+  text-align:center!important;
+}
+
+main section#executive.hero>.hero-stats{
+  width:min(100%,1240px);
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+main section#executive.hero .hero-stats .card{
+  text-align:center!important;
+}
+
+main section#executive.hero .hero-stats .badge{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+@media(max-width:680px){
+  main section#executive.hero .hero-meta div{
+    flex-direction:column;
+    gap:4px;
+  }
+}
+
 @media print{
   main section#executive.hero{
     display:block!important;
