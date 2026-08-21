@@ -24,6 +24,36 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+      - name: Prepare production HTML
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('index.html')
+          html = path.read_text(encoding='utf-8')
+
+          html = html.replace(
+              '<meta name="theme-color" content="#0a0a1a">',
+              '<meta name="theme-color" content="#0c0906">'
+          )
+
+          base_css = '<link rel="stylesheet" href="styles.css?v=20260821-1">'
+          production_css = '\n'.join([
+              '<link rel="stylesheet" href="gold-theme.css?v=20260821-2">',
+              '<link rel="stylesheet" href="gold-consistency.css?v=20260821-4">',
+              '<link rel="stylesheet" href="gold-glow.css?v=20260821-1">',
+              '<link rel="stylesheet" href="layout-fix.css?v=20260821-3">',
+          ])
+          if 'layout-fix.css?v=20260821-3' not in html:
+              html = html.replace(base_css, base_css + '\n' + production_css)
+
+          html = html.replace(
+              '<script src="app.js?v=20260821-1"></script>',
+              '<script src="app.js?v=20260821-3"></script>'
+          )
+
+          path.write_text(html, encoding='utf-8')
+          PY
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
