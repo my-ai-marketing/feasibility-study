@@ -43,14 +43,19 @@ jobs:
               '<link rel="stylesheet" href="gold-consistency.css?v=20260821-4">',
               '<link rel="stylesheet" href="gold-glow.css?v=20260821-1">',
               '<link rel="stylesheet" href="layout-fix.css?v=20260821-3">',
+              '<link rel="stylesheet" href="study-nav.css?v=20260821-1">',
           ])
-          if 'layout-fix.css?v=20260821-3' not in html:
+          if 'study-nav.css?v=20260821-1' not in html:
               html = html.replace(base_css, base_css + '\n' + production_css)
 
           html = html.replace(
               '<script src="app.js?v=20260821-1"></script>',
               '<script src="app.js?v=20260821-3"></script>'
           )
+
+          nav_script = '<script src="study-nav.js?v=20260821-1"></script>'
+          if nav_script not in html:
+              html = html.replace('</body>', nav_script + '\n</body>')
 
           path.write_text(html, encoding='utf-8')
           PY
