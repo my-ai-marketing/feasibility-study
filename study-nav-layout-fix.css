@@ -1,0 +1,54 @@
+/* Final layout guard for the Tasmeer-style navigation.
+   Loads after all theme and navigation CSS so the executive hero
+   cannot fall back to the original full-viewport centred layout. */
+
+main section:not(.hero){
+  min-height:0!important;
+  height:auto!important;
+}
+
+main section.hero{
+  min-height:0!important;
+  height:auto!important;
+  justify-content:flex-start!important;
+  padding-top:118px!important;
+  padding-bottom:56px!important;
+}
+
+main section.hero .hero-grid{
+  margin-top:0!important;
+}
+
+main section.hero .hero-stats{
+  margin-top:36px!important;
+}
+
+@media(max-width:1050px){
+  main section.hero{
+    min-height:0!important;
+    height:auto!important;
+    justify-content:flex-start!important;
+    padding-top:36px!important;
+    padding-bottom:44px!important;
+  }
+}
+
+@media(max-width:700px){
+  main section.hero{
+    padding-top:28px!important;
+    padding-bottom:36px!important;
+  }
+
+  main section.hero .hero-stats{
+    margin-top:28px!important;
+  }
+}
+
+@media print{
+  main section.hero{
+    min-height:0!important;
+    height:auto!important;
+    padding-top:28px!important;
+    padding-bottom:28px!important;
+  }
+}
