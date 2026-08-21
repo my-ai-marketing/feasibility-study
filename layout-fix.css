@@ -1,180 +1,207 @@
-/* Executive hero layout fix: keep the first screen content-led instead of viewport-centred. */
-main section:not(.hero){min-height:0!important}
-
-main section.hero{
+/* Final executive hero flow guard.
+   The production build loads this after the base theme. Keep the hero in
+   normal document flow so no viewport-sized intro stage can appear. */
+main section:not(.hero){
   min-height:0!important;
   height:auto!important;
-  display:flex!important;
-  flex-direction:column!important;
-  justify-content:flex-start!important;
-  align-content:flex-start!important;
-  padding-top:52px!important;
+}
+
+main section#executive.hero{
+  display:block!important;
+  min-height:0!important;
+  height:auto!important;
+  max-height:none!important;
+  justify-content:initial!important;
+  align-content:initial!important;
+  align-items:initial!important;
+  padding-top:104px!important;
   padding-bottom:46px!important;
 }
 
-main section.hero .hero-grid{
-  margin-top:0!important;
-  align-self:stretch!important;
+main section#executive.hero>.hero-orb{
+  position:absolute!important;
+}
+
+main section#executive.hero>.hero-grid{
+  display:grid!important;
+  position:relative!important;
+  inset:auto!important;
+  top:auto!important;
+  right:auto!important;
+  bottom:auto!important;
+  left:auto!important;
+  transform:none!important;
+  min-height:0!important;
+  height:auto!important;
+  margin:0!important;
+  padding:0!important;
   align-items:start!important;
+  align-content:start!important;
+  align-self:auto!important;
   gap:clamp(34px,4vw,54px)!important;
 }
 
-main section.hero .hero-grid>div:first-child{
+main section#executive.hero>.hero-grid>div{
   min-width:0;
+  margin-top:0!important;
+  transform:none!important;
 }
 
-main section.hero .display{
+main section#executive.hero .display{
   font-size:clamp(52px,6vw,88px)!important;
   max-width:980px;
 }
 
-main section.hero .lede{
+main section#executive.hero .lede{
   max-width:900px;
-  margin-top:22px;
+  margin-top:22px!important;
 }
 
-main section.hero .decision-lockup{
-  margin-top:26px;
+main section#executive.hero .decision-lockup{
+  margin-top:26px!important;
 }
 
-main section.hero .chips{
-  margin-top:18px;
+main section#executive.hero .chips{
+  margin-top:18px!important;
 }
 
-main section.hero .hero-meta{
-  align-self:end;
+main section#executive.hero .hero-meta{
+  align-self:end!important;
   width:100%;
   max-width:390px;
-  margin-top:7px;
+  margin-top:7px!important;
 }
 
-main section.hero .hero-stats{
+main section#executive.hero>.hero-stats{
+  position:relative!important;
+  inset:auto!important;
+  transform:none!important;
+  min-height:0!important;
+  height:auto!important;
   margin-top:32px!important;
 }
 
 @media(max-width:1180px){
-  main section.hero{
-    padding-top:46px!important;
+  main section#executive.hero{
+    padding-top:92px!important;
     padding-bottom:42px!important;
   }
 
-  main section.hero .display{
+  main section#executive.hero .display{
     font-size:clamp(48px,6.2vw,74px)!important;
   }
 }
 
-@media(max-width:980px){
-  main section.hero{
-    padding-top:38px!important;
+@media(max-width:1050px){
+  main section#executive.hero{
+    padding-top:26px!important;
     padding-bottom:38px!important;
   }
 
-  main section.hero .hero-grid{
-    gap:26px!important;
+  main section#executive.hero>.hero-grid{
+    grid-template-columns:1fr!important;
+    gap:24px!important;
   }
 
-  main section.hero .hero-meta{
-    align-self:stretch;
+  main section#executive.hero .hero-meta{
+    align-self:stretch!important;
     max-width:none;
-    margin-top:0;
+    margin-top:0!important;
   }
 
-  main section.hero .hero-stats{
-    margin-top:28px!important;
+  main section#executive.hero>.hero-stats{
+    margin-top:26px!important;
   }
 }
 
 @media(max-width:680px){
-  main section.hero{
-    min-height:0!important;
-    height:auto!important;
-    justify-content:flex-start!important;
-    padding-top:30px!important;
-    padding-bottom:30px!important;
+  main section#executive.hero{
+    padding-top:20px!important;
+    padding-bottom:28px!important;
   }
 
-  main section.hero .eyebrow{
-    margin-bottom:18px;
+  main section#executive.hero .eyebrow{
+    margin-bottom:16px!important;
     font-size:9px;
     line-height:1.45;
   }
 
-  main section.hero .eyebrow:before{
+  main section#executive.hero .eyebrow:before{
     width:30px;
     flex:0 0 30px;
   }
 
-  main section.hero .display{
+  main section#executive.hero .display{
     font-size:clamp(42px,12vw,52px)!important;
     line-height:.96;
   }
 
-  main section.hero .lede{
+  main section#executive.hero .lede{
     font-size:15px;
     line-height:1.48;
-    margin-top:18px;
+    margin-top:18px!important;
   }
 
-  main section.hero .decision-lockup{
-    margin-top:22px;
+  main section#executive.hero .decision-lockup{
+    margin-top:20px!important;
     padding:17px 18px;
   }
 
-  main section.hero .decision-lockup strong{
+  main section#executive.hero .decision-lockup strong{
     font-size:25px;
   }
 
-  main section.hero .chips{
-    margin-top:16px;
+  main section#executive.hero .chips{
+    margin-top:15px!important;
     gap:6px;
   }
 
-  main section.hero .chip{
+  main section#executive.hero .chip{
     padding:6px 9px;
     font-size:9px;
   }
 
-  main section.hero .hero-meta{
+  main section#executive.hero .hero-meta{
     padding-top:14px;
     gap:8px;
   }
 
-  main section.hero .hero-meta div{
+  main section#executive.hero .hero-meta div{
     padding-bottom:8px;
   }
 
-  main section.hero .hero-stats{
+  main section#executive.hero>.hero-stats{
     grid-template-columns:repeat(2,minmax(0,1fr))!important;
     gap:10px!important;
-    margin-top:24px!important;
+    margin-top:22px!important;
   }
 
-  main section.hero .hero-stats .card{
+  main section#executive.hero .hero-stats .card{
     padding:16px 14px;
     border-radius:15px;
   }
 
-  main section.hero .hero-stats .kicker{
+  main section#executive.hero .hero-stats .kicker{
     font-size:8px;
     line-height:1.35;
     margin-bottom:8px;
   }
 
-  main section.hero .hero-stats .fact-number{
+  main section#executive.hero .hero-stats .fact-number{
     font-size:29px;
   }
 
-  main section.hero .hero-stats .decision-small{
+  main section#executive.hero .hero-stats .decision-small{
     font-size:18px;
     line-height:1.08;
   }
 
-  main section.hero .hero-stats .fact-label{
+  main section#executive.hero .hero-stats .fact-label{
     font-size:9px;
     line-height:1.4;
   }
 
-  main section.hero .hero-stats .badge{
+  main section#executive.hero .hero-stats .badge{
     font-size:7px;
     padding:4px 6px;
     margin-top:10px;
@@ -182,7 +209,17 @@ main section.hero .hero-stats{
 }
 
 @media(max-width:380px){
-  main section.hero .hero-stats{
+  main section#executive.hero>.hero-stats{
     grid-template-columns:1fr!important;
+  }
+}
+
+@media print{
+  main section#executive.hero{
+    display:block!important;
+    min-height:0!important;
+    height:auto!important;
+    padding-top:28px!important;
+    padding-bottom:28px!important;
   }
 }

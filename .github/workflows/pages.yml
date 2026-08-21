@@ -42,16 +42,16 @@ jobs:
               '<link rel="stylesheet" href="gold-theme.css?v=20260821-2">',
               '<link rel="stylesheet" href="gold-consistency.css?v=20260821-4">',
               '<link rel="stylesheet" href="gold-glow.css?v=20260821-1">',
-              '<link rel="stylesheet" href="layout-fix.css?v=20260821-3">',
               '<link rel="stylesheet" href="study-nav.css?v=20260821-1">',
               '<link rel="stylesheet" href="study-nav-layout-fix.css?v=20260821-1">',
+              '<link rel="stylesheet" href="layout-fix.css?v=20260821-5">',
           ])
-          if 'study-nav-layout-fix.css?v=20260821-1' not in html:
+          if 'layout-fix.css?v=20260821-5' not in html:
               html = html.replace(base_css, base_css + '\n' + production_css)
 
           html = html.replace(
               '<script src="app.js?v=20260821-1"></script>',
-              '<script src="app.js?v=20260821-3"></script>'
+              '<script src="app.js?v=20260821-4"></script>'
           )
 
           nav_script = '<script src="study-nav.js?v=20260821-1"></script>'
