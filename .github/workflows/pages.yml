@@ -44,8 +44,9 @@ jobs:
               '<link rel="stylesheet" href="gold-glow.css?v=20260821-1">',
               '<link rel="stylesheet" href="layout-fix.css?v=20260821-3">',
               '<link rel="stylesheet" href="study-nav.css?v=20260821-1">',
+              '<link rel="stylesheet" href="study-nav-layout-fix.css?v=20260821-1">',
           ])
-          if 'study-nav.css?v=20260821-1' not in html:
+          if 'study-nav-layout-fix.css?v=20260821-1' not in html:
               html = html.replace(base_css, base_css + '\n' + production_css)
 
           html = html.replace(
