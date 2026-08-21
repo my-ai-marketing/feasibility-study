@@ -1,7 +1,18 @@
 /* Remove forced blank vertical space from regular study sections. */
 main section:not(.hero){min-height:auto!important}
 
-/* Keep the opening executive hero intentionally full-height. */
-main section.hero{min-height:100vh}
+/* Let the executive hero size to its content instead of forcing a full viewport. */
+main section.hero{
+  min-height:auto!important;
+  justify-content:flex-start;
+  padding-top:72px;
+  padding-bottom:56px;
+}
 
-@media(max-width:700px){main section.hero{min-height:calc(100svh - 62px)}}
+@media(max-width:700px){
+  main section.hero{
+    min-height:auto!important;
+    padding-top:44px!important;
+    padding-bottom:36px!important;
+  }
+}
